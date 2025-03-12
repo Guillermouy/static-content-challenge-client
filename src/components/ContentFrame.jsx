@@ -6,8 +6,7 @@ const ContentFrame = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const path = window.location.pathname;
-    const contentPath = path === "/" ? "/about-page" : path;
+    const contentPath = window.location.pathname;
     const url = `${API_CONFIG.baseUrl}${contentPath}`;
     setContentUrl(url);
     setLoading(false);
@@ -16,8 +15,7 @@ const ContentFrame = () => {
   useEffect(() => {
     const handleRouteChange = () => {
       setLoading(true);
-      const path = window.location.pathname;
-      const contentPath = path === "/" ? "/about-page" : path;
+      const contentPath = window.location.pathname;
       const url = `${API_CONFIG.baseUrl}${contentPath}`;
       setContentUrl(url);
       setLoading(false);

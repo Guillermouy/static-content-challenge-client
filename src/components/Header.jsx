@@ -21,9 +21,6 @@ const Header = () => {
               .replace(/^\w/, (c) => c.toUpperCase()),
           }));
 
-          if (!formattedItems.some((item) => item.path === "/")) {
-            formattedItems.unshift({ path: "/", title: "Home" });
-          }
           setNavItems(formattedItems);
         }
       })
@@ -36,7 +33,7 @@ const Header = () => {
     e.preventDefault();
     navigate(path);
 
-    const contentPath = path === "/" ? "/about-page" : path;
+    const contentPath = path;
     const iframeSrc = `${API_CONFIG.baseUrl}${contentPath}`;
 
     const iframe = document.querySelector(".content-frame-container iframe");
