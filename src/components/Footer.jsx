@@ -2,9 +2,9 @@ import React from "react";
 import useNavigation from "../hooks/useNavigation";
 
 const LEGAL_PAGES = [
-  { path: "/privacy", title: "Privacy Policy" },
-  { path: "/terms", title: "Terms of Service" },
-  { path: "/contact", title: "Contact Us" },
+  { path: "/legal/privacy", title: "Privacy Policy" },
+  { path: "/legal/terms", title: "Terms of Service" },
+  { path: "/legal/contact", title: "Contact Us" },
 ];
 
 const Footer = () => {
