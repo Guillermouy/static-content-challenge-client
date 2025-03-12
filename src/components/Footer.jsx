@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LEGAL_PAGES = [
   { path: "/privacy", title: "Privacy Policy" },
@@ -27,12 +28,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {LEGAL_PAGES.map((page) => (
                 <li key={page.path}>
-                  <a
-                    href={page.path}
+                  <Link
+                    to={page.path}
                     className="hover:text-theme-yellow transition-colors"
                   >
                     {page.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
