@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { getApiUrl, API_CONFIG } from "../config/api";
+import useNavigation from "../hooks/useNavigation";
 
 const Header = () => {
   const [navItems, setNavItems] = useState([]);
   const location = useLocation();
-  const navigate = useNavigate();
+  const { handleNavigation } = useNavigation();
 
   useEffect(() => {
     fetch(getApiUrl(API_CONFIG.endpoints.getRoutes))
@@ -28,19 +29,6 @@ const Header = () => {
         console.error("Error fetching navigation:", error);
       });
   }, []);
-
-  const handleNavigation = (e, path) => {
-    e.preventDefault();
-    navigate(path);
-
-    const contentPath = path;
-    const iframeSrc = `${API_CONFIG.baseUrl}${contentPath}`;
-
-    const iframe = document.querySelector(".content-frame-container iframe");
-    if (iframe) {
-      iframe.src = iframeSrc;
-    }
-  };
 
   return (
     <header className="bg-theme-dark-blue text-theme-white py-4">

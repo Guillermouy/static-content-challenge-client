@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { API_CONFIG } from "../config/api";
+import useNavigation from "../hooks/useNavigation";
 
 const LEGAL_PAGES = [
   { path: "/privacy", title: "Privacy Policy" },
@@ -9,20 +8,7 @@ const LEGAL_PAGES = [
 ];
 
 const Footer = () => {
-  const navigate = useNavigate();
-
-  const handleNavigation = (e, path) => {
-    e.preventDefault();
-    navigate(path);
-
-    const contentPath = path;
-    const iframeSrc = `${API_CONFIG.baseUrl}${contentPath}`;
-
-    const iframe = document.querySelector(".content-frame-container iframe");
-    if (iframe) {
-      iframe.src = iframeSrc;
-    }
-  };
+  const { handleNavigation } = useNavigation();
 
   return (
     <footer className="bg-theme-dark-blue text-theme-white py-6">
