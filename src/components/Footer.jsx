@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { API_CONFIG } from "../config/api";
 
 const LEGAL_PAGES = [
   { path: "/privacy", title: "Privacy Policy" },
@@ -8,6 +9,21 @@ const LEGAL_PAGES = [
 ];
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (e, path) => {
+    e.preventDefault();
+    navigate(path);
+
+    const contentPath = path;
+    const iframeSrc = `${API_CONFIG.baseUrl}${contentPath}`;
+
+    const iframe = document.querySelector(".content-frame-container iframe");
+    if (iframe) {
+      iframe.src = iframeSrc;
+    }
+  };
+
   return (
     <footer className="bg-theme-dark-blue text-theme-white py-6">
       <div className="container mx-auto px-4">
@@ -28,12 +44,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {LEGAL_PAGES.map((page) => (
                 <li key={page.path}>
-                  <Link
-                    to={page.path}
+                  <a
+                    href={page.path}
+                    onClick={(e) => handleNavigation(e, page.path)}
                     className="hover:text-theme-yellow transition-colors"
                   >
                     {page.title}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
