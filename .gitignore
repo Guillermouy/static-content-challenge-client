@@ -1,4 +1,3 @@
-# Logs
 logs
 *.log
 npm-debug.log*
@@ -8,13 +7,40 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.pnp
+.pnp.js
+
 dist
 dist-ssr
 *.local
+build
+out
+.output
 
-# Editor directories and files
+coverage
+.nyc_output
+.jest-cache
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*.tsbuildinfo
+.tscache
+
+.npm
+.eslintcache
+.stylelintcache
+.cache
+.parcel-cache
+
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
 .idea
 .DS_Store
 *.suo
@@ -22,3 +48,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.temp
+.tmp
+.turbo
+.vercel
+.netlify
+storybook-static
