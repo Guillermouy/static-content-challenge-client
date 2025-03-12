@@ -33,7 +33,7 @@ const ContentFrame = () => {
     <div className="content-frame-container">
       {loading ? (
         <div className="flex justify-center items-center h-64">
-          <p>Cargando contenido...</p>
+          <p>Loading content...</p>
         </div>
       ) : contentUrl ? (
         <iframe
