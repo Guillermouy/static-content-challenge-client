@@ -68,3 +68,8 @@ VITE_API_BASE_URL=http://your-backend-api-url
 ## Additional Information
 
 For information about the backend API that provides the HTML content to this frontend application, please refer to the backend project's documentation at [https://github.com/Guillermouy/static-content-challenge-server/blob/main/DOCUMENTATION.md](https://github.com/Guillermouy/static-content-challenge-server/blob/main/DOCUMENTATION.md). The backend handles all content management, HTML generation with styling, and serves the content that this frontend application renders.
+
+## Deployment
+
+The application is currently deployed and available at:
+**[https://static-content-client.vercel.app/legal/privacy](https://static-content-client.vercel.app/legal/privacy)**
